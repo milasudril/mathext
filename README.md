@@ -1,4 +1,4 @@
 mathext
 =======
 
-Extensions to c math library
+Constants missing in standard c math library
