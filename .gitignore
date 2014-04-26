@@ -11,3 +11,6 @@
 *.lai
 *.la
 *.a
+
+__wand_targets/*
+__wand_targets_rel/*
