@@ -6,8 +6,9 @@ target[name[ode.h] type[include]]
 #ifndef MATHEXT_ODE_H
 #define MATHEXT_ODE_H
 
-#include <cstddef>
+#include "identity.h"
 
+#include <cstddef>
 #include <cstdio>
 
 namespace MathExt
@@ -76,7 +77,7 @@ namespace MathExt
 	
 			//	Use one Newton step to find an approximation to x_0
 				x_0=x_predicted - (x_predicted - dt*f(x_predicted,(k+1)*dt) - x_0 )
-					/(1-dt*J(x_predicted,(k+1)*dt));
+					/(identity<typename State<ODEFunction>::type>() - dt*J(x_predicted,(k+1)*dt));
 				--N_iter;
 				++k;
 				}
@@ -103,7 +104,7 @@ namespace MathExt
 	
 			//	Use one Newton step to find an approximation to x_0
 				x_0=x_predicted - (x_predicted - dt*f(x_predicted,(k+1)*dt) - x_0 )
-					/(1-dt*J(x_predicted,(k+1)*dt));
+					/(identity<typename State<ODEFunction>::type>() -dt*J(x_predicted,(k+1)*dt));
 				
 				x_0=0.5*(x_0 + x_predicted);
 					
