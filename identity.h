@@ -7,12 +7,22 @@ target[name[identity.h] type[include]]
 
 namespace MathExt
 	{
-	template<class T>
-	T identity();
+	template <class T>
+	class IdentityType;
 	
 	template<>
-	inline double identity()
-		{return 1.0;}
+	class IdentityType<double>
+		{
+		public:
+			typedef double type;
+			
+			operator type() const
+				{return 1.0;}
+		};
+		
+	template<class T>
+	typename IdentityType<T>::type identity()
+		{return IdentityType<T>();}
 	}
 
 #endif

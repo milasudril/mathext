@@ -14,3 +14,4 @@
 
 __wand_targets/*
 __wand_targets_rel/*
+__wand_targets_dbg/*
