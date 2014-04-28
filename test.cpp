@@ -29,7 +29,7 @@ class FuncJacobi
 	public:
 		Vector::Matrix22<double> operator()(const Vector::Vector2d<double>& v,double t)
 			{
-			return {0,-1,1,0};
+			return {0,-1,0.5,0};
 				
 			}
 	};
