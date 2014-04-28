@@ -1,4 +1,4 @@
 mathext
 =======
 
-Constants missing in standard c math library
+Constants missing in standard c math library and some ODE solvers
