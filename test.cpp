@@ -1,10 +1,12 @@
 #ifdef __WAND__
+target[name[mathext_test.exe] type[application] platform[;Windows]]
 target[name[mathext_test] type[application]]
 #endif
 
 #include "ode.h"
 
 #include <vector/vector2d.h>
+#include <herbs/main/main.h>
 
 #include <cstdio>
 
@@ -34,7 +36,7 @@ class FuncJacobi
 			}
 	};
 
-int main()
+int MAIN(int argc,charsys_t* argv[])
 	{
 	double t_0=0;
 	Vector::Vector2d<double> v_0={1,0};
